@@ -2,6 +2,7 @@
 /.bundle/
 /coverage/
 /pkg/
+/.openapi-generator.*
+/.generation-check.*
 *.gem
 *.log
-
