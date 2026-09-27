@@ -1,0 +1,8 @@
+# The public gem owns its gemspec, README, and tests outside the generated tree.
+*
+!lib/
+!lib/**
+!lib/replynodes/
+!lib/replynodes/**
+!lib/replynodes/generated/
+!lib/replynodes/generated/**

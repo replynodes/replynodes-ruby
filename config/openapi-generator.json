@@ -1,0 +1,23 @@
+{
+  "allowUnicodeIdentifiers": false,
+  "disallowAdditionalPropertiesIfNotPresent": false,
+  "ensureUniqueParams": true,
+  "enumUnknownDefaultCase": false,
+  "gemAuthor": "ReplyNodes",
+  "gemAuthorEmail": "support@replynodes.com",
+  "gemDescription": "Ruby client for the ReplyNodes read-only data API",
+  "gemHomepage": "https://replynodes.com",
+  "gemLicense": "MIT",
+  "gemName": "replynodes",
+  "gemRequiredRubyVersion": ">= 3.0",
+  "gemSummary": "ReplyNodes Ruby SDK",
+  "gemVersion": "0.1.0",
+  "hideGenerationTimestamp": true,
+  "legacyDiscriminatorBehavior": true,
+  "library": "faraday",
+  "moduleName": "ReplyNodesGenerated",
+  "prependFormOrBodyParameters": false,
+  "sortModelPropertiesByRequiredFlag": true,
+  "sortParamsByRequiredFlag": true,
+  "useAutoload": false
+}

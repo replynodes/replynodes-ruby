@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+generator_image="openapitools/openapi-generator-cli:v7.10.0"
+output_dir="${repo_root}/lib/replynodes/generated"
+scratch_dir="$(mktemp -d "${repo_root}/.openapi-generator.XXXXXX")"
+trap 'rm -rf "${scratch_dir}"' EXIT
+
+rm -rf "${output_dir}"
+mkdir -p "${output_dir}"
+
+docker run --rm \
+  --user "$(id -u):$(id -g)" \
+  -v "${repo_root}:/local" \
+  "${generator_image}" generate \
+  -i /local/openapi/replynodes-fetcher.openapi.json \
+  -g ruby \
+  -o "/local/${scratch_dir#${repo_root}/}" \
+  -c /local/config/openapi-generator.json \
+  --ignore-file-override /local/config/.openapi-generator-ignore \
+  --global-property apiTests=false,modelTests=false,apiDocs=false,modelDocs=false
+
+# Keep only the generated Ruby library. The generated gemspec, README, build
+# files, and generator metadata remain outside the published gem tree.
+cp -R "${scratch_dir}/lib/replynodes" "${output_dir}/"
+cp "${scratch_dir}/lib/replynodes.rb" "${repo_root}/lib/replynodes/generated.rb"
+python3 "${repo_root}/scripts/generate_registry.py"

@@ -1,11 +1,14 @@
-# ReplyNodes Ruby SDK
+# ReplyNodes Ruby SDK (legacy)
 
-Ruby client for the authenticated, read-only ReplyNodes API.
+This repository contains a generated REST SDK whose public contract is pending audit. It is retained for historical reference only and is not a current installation or endpoint guide.
 
-This repository is the source for the `replynodes` gem. The generated HTTP
-client is isolated under `lib/replynodes/generated/`; the public `ReplyNodes::Client`
-API is maintained separately so generated files can be regenerated safely.
+Do not use the retired REST default from older examples. The canonical current agent-facing surface is the ReplyNodes MCP:
 
-Implementation is being developed from the canonical ReplyNodes Fetcher
-OpenAPI contract.
+- Repository: https://github.com/replynodes/replynodes-mcp
+- Endpoint: `https://mcp.replynodes.com/mcp`
 
+The MCP is not a drop-in REST replacement for this generated Ruby client. Contract and release decisions for the SDK are tracked separately; this documentation intentionally does not provide a replacement REST base URL.
+
+## Development
+
+Generated sources remain under `lib/replynodes/generated/` and are produced from the vendored OpenAPI contract. Do not treat the generated surface as current production guidance until the SDK contract audit is complete.
