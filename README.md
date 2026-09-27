@@ -2,7 +2,7 @@
 
 This repository contains a generated REST SDK whose public contract is pending audit. It is retained for historical reference only and is not a current installation or endpoint guide.
 
-Do not use the retired `api.replynodes.com` default from older examples. The canonical current agent-facing surface is the ReplyNodes MCP:
+Do not use the retired REST default from older examples. The canonical current agent-facing surface is the ReplyNodes MCP:
 
 - Repository: https://github.com/replynodes/replynodes-mcp
 - Endpoint: `https://mcp.replynodes.com/mcp`
